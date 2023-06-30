@@ -1,0 +1,12 @@
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+//        WebElement redElementSon = driver.findElement(By.xpath("//div[@style='width: 100%;']"));
+          Actions actions = new Actions(driver);
+          actions.clickAndHold(redElement).perform();
+          wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("changedElementId")));
+            WebElement changedElement = driver.findElement(By.id("changedElementId"));
+        String text = changedElement.getText();
+        System.out.println("text = " + text);
+//        actions.dragAndDrop(redElement,redElementSon).perform();
+        //     -Sarı olduğunu test edelim
+    }
